@@ -28,7 +28,7 @@ $(document).ready(function()
 
 	function isOneOperandOperator(n) 
 	{
-  		return n == "SQRT" || n == "log";
+  		return n == "SQRT" || n == "log" || n == "Fact";
 	}
 
 	function isTwoOperandOperator(n) 
@@ -84,7 +84,12 @@ $(document).ready(function()
 					$('#question').prepend("log(");
 					$('#question').append(")");					
 				}
-
+				else if (operator == "Fact")
+				{
+					answer = fact(first_operand);
+					$('#question').prepend("fact(");
+					$('#question').append(")");					
+				}
 				$('#question').append(" =");
 				$('#answer').append(answer).hide().fadeIn(1000);				
 			}
